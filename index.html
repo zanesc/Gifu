@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+  </head>
+  <body>
+    <a title="  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html"> Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/kaishin/gifu/"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html"> Reference</a>
+        <img id="carat" src="img/carat.png" />
+          Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/AnimatableImageView.html">AnimatableImageView</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <a href='#img_src_https_db_tt_mz1imnxo_alt_gifu' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='img_src_https_db_tt_mz1imnxo_alt_gifu'><img src="https://db.tt/mZ1iMNXO" alt="Gifu"></h1>
+
+<p>Adds performant animated GIF support to UIKit. If you&rsquo;re looking for the Japanese prefecture, click <a href="https://goo.gl/maps/CCeAc">here</a>.</p>
+<a href='#how' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='how'>How?</h4>
+
+<p>Gifu uses a <code>UIImageView</code> subclass and an animator that keeps track of frames and their durations.</p>
+
+<p>It uses <code>CADisplayLink</code> to animate the view and only keeps a limited number of
+resized frames in-memory, which exponentially minimizes memory usage for large GIF files (+300 frames).</p>
+
+<p>The figure below summarizes how this works in practice. Given an image
+containing 10 frames, Gifu will load the current frame (red), pre-load the next two frames in this example (orange), and nullify all the other frames to free up memory (gray):</p>
+
+<p><img src="https://db.tt/ZLfx23hg" width="300" /></p>
+<a href='#install' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='install'>Install</h4>
+
+<p>If you use <a href="https://github.com/Carthage/Carthage">Carthage</a>, add this to your <code>cartfile</code>: <code>github &quot;kaishin/gifu&quot;</code>.</p>
+
+<p>If your prefer Git submodules or want to support iOS 7, you want to add the files in <code>source</code> to your Xcode project.</p>
+<a href='#usage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='usage'>Usage</h4>
+
+<p>Start by instantiating an <code>AnimatableImageView</code> either in code or Interface Builder, then call <code>animateWithImage(named:)</code> or <code>animateWithImageData(data:)</code> on it.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">imageView</span> <span class="o">=</span> <span class="kt">AnimatableImageView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="o">...</span><span class="p">))</span>
+<span class="n">imageView</span><span class="o">.</span><span class="nf">animateWithImage</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span> <span class="s">"mugen.gif"</span><span class="p">)</span>
+</code></pre>
+
+<p>You can stop the animation anytime using <code>imageView.stopAnimatingGIF()</code>, and resume
+it using <code>imageView.startAnimatingGIF()</code>.</p>
+
+<p>The <code>isAnimatingGIF()</code> method returns the current animation state of the view if it has an animatable image.</p>
+<a href='#demo_app' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='demo_app'>Demo App</h4>
+
+<p>Clone or download the repository and open <code>Gifu.xcworkspace</code> to check out the demo app.</p>
+<a href='#compatibility' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='compatibility'>Compatibility</h4>
+
+<ul>
+<li>iOS 7+</li>
+</ul>
+<a href='#roadmap' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='roadmap'>Roadmap</h4>
+
+<ul>
+<li>Documentation.</li>
+<li>Add ability to set the frame-rate</li>
+</ul>
+<a href='#contributors' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='contributors'>Contributors</h4>
+
+<ul>
+<li><a href="https://github.com/kaishin">Reda Lemeden</a></li>
+<li><a href="https://github.com/tonyd256">Tony DiPasquale</a></li>
+</ul>
+<a href='#misc' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='misc'>Misc</h4>
+
+<ul>
+<li>The font used in the logo is <a href="http://www.myfonts.com/fonts/bluevinyl/azuki/">Azuki</a></li>
+<li>The characters used in the icon and example image in the demo are from <a href="https://en.wikipedia.org/wiki/Samurai_Champloo">Samurai Champloo</a>.</li>
+</ul>
+<a href='#license' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='license'>License</h4>
+
+<p>See LICENSE.</p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>2015 © Reda Lemeden. See LICENSE for more details.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.4.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

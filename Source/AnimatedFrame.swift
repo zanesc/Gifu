@@ -3,8 +3,16 @@ struct AnimatedFrame {
   let image: UIImage?
   let duration: NSTimeInterval
 
-  static func null() -> AnimatedFrame {
-    return AnimatedFrame(image: .None, duration: 0)
+  var placeholderFrame: AnimatedFrame {
+    return AnimatedFrame(image: nil, duration: duration)
+  }
+
+  var isPlaceholder: Bool {
+    return image == .None
+  }
+
+  func frameWithImage(image: UIImage?) -> AnimatedFrame {
+    return AnimatedFrame(image: image, duration: duration)
   }
 }
 

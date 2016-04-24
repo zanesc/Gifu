@@ -12,7 +12,7 @@ public class AnimatableImageView: UIImageView {
     }
 
     @objc func onScreenUpdate() {
-      target?.updateFrame()
+      target?.updateFrameIfNeeded()
     }
   }
 
@@ -85,7 +85,7 @@ public class AnimatableImageView: UIImageView {
 
   /// Updates the `image` property of the image view if necessary. This method should not be called manually.
   override public func displayLayer(layer: CALayer) {
-    image = animator?.currentFrame
+    image = animator?.currentFrameImage
   }
 
   /// Starts the image view animation.
@@ -107,9 +107,10 @@ public class AnimatableImageView: UIImageView {
   }
 
   /// Update the current frame with the displayLink duration
-  func updateFrame() {
-    if animator?.updateCurrentFrame(displayLink.duration) ?? false {
-      layer.setNeedsDisplay()
+  func updateFrameIfNeeded() {
+    guard let animator = animator else { return }
+    animator.shouldChangeFrame(displayLink.duration) { hasNewFrame in
+      if hasNewFrame { self.layer.setNeedsDisplay() }
     }
   }
 

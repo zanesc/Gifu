@@ -32,8 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0036ABB61BBD1D0B00C6CC3D /* mugen.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = mugen.gif; path = Demo/demo/Images.xcassets/mugen.dataset/mugen.gif; sourceTree = SOURCE_ROOT; };
-		0036ABB81BBD1D1400C6CC3D /* nailed.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = nailed.gif; path = Demo/demo/Images.xcassets/nailed.dataset/nailed.gif; sourceTree = SOURCE_ROOT; };
+		0036ABB61BBD1D0B00C6CC3D /* mugen.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = mugen.gif; path = Demo/GIFs/mugen.gif; sourceTree = SOURCE_ROOT; };
+		0036ABB81BBD1D1400C6CC3D /* nailed.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = nailed.gif; path = Demo/GIFs/nailed.gif; sourceTree = SOURCE_ROOT; };
 		005656EC1A6F14D6008A0ED1 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		005656EE1A6F1C26008A0ED1 /* AnimatableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableImageView.swift; sourceTree = "<group>"; };
 		007E08431BD95E6200883D0C /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };

@@ -6,8 +6,7 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    imageView.animateWithImage(named: "mugen.gif")
+    imageView.animate(withGIFNamed: "earth")
   }
 
   @IBAction func toggleAnimation(sender: AnyObject) {

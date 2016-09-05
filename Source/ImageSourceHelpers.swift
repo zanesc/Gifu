@@ -54,7 +54,7 @@ extension CGImageSource {
   ///
   /// - returns: A boolean value that is `true` if the image source contains animated GIF data.
   var isAnimatedGIF: Bool {
-    let isTypeGIF = UTTypeConformsTo(CGImageSourceGetType(self) ?? "", kUTTypeGIF)
+    let isTypeGIF = UTTypeConformsTo(CGImageSourceGetType(self) ?? "" as CFString, kUTTypeGIF)
     let imageCount = CGImageSourceGetCount(self)
     return isTypeGIF != false && imageCount > 1
   }
@@ -65,6 +65,6 @@ extension CGImageSource {
   /// - returns: A dictionary containing the GIF properties at the passed in index.
   func properties(at index: Int) -> GIFProperties? {
     let imageProperties = CGImageSourceCopyPropertiesAtIndex(self, index, nil) as Dictionary?
-    return imageProperties?[String(kCGImagePropertyGIFDictionary)] as? GIFProperties
+    return imageProperties?[kCGImagePropertyGIFDictionary] as? GIFProperties
   }
 }

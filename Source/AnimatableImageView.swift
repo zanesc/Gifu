@@ -51,9 +51,9 @@ public class AnimatableImageView: UIImageView {
   ///
   /// - parameter imageName: The name of the GIF file. The method looks for the file in the app bundle.
   public func prepareForAnimation(withGIFNamed imageName: String) {
-    guard let extensionRemoved = imageName.components(separatedBy: ".")[safe: 0],
-      let imagePath = Bundle.main.urlForResource(extensionRemoved, withExtension: "gif"),
-      let data = try? Data(contentsOf: imagePath) else { return }
+	guard let extensionRemoved = imageName.components(separatedBy: ".")[safe:0],
+		let imagePath = Bundle.main.url(forResource: extensionRemoved, withExtension: "gif"),
+		let data = try? Data(contentsOf: imagePath) else { return }
 
     prepareForAnimation(withGIFData: data)
   }
